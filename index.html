@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="form">
+    <h1>Formulario de Registro</h1>
+    <form id="registro-form">
+        <label id="nombre" for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required><br>
+
+        <label id="apellido" for="apellido">Apellido:</label>
+        <input type="text"  name="apellido" id="apellido" required><br>
+    <div class="fechanac">
+        <label for="fecha">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha" name="fecha" required>
+        <button type="submit">Enviar</button>
+    </div>
+
+    </form>
+</div>
+<div id="respuesta"></div>
+<script src="js/script.js"></script>
+
+</body>
+</html>
