@@ -9,29 +9,16 @@ form.addEventListener('submit', function (event) {
     const apellido = document.getElementById('apellido').value;
     const fecha = document.getElementById('fecha').value;
 
-    // Función para convertir todas las claves a minúsculas
-    function keysToLowerCase(obj) {
-        const result = {};
-        for (const key in obj) {
-            if (Object.hasOwnProperty.call(obj, key)) {
-                result[key.toLowerCase()] = obj[key];
-            }
-        }
-        return result;
-    }
-
-    const dataToSend = keysToLowerCase({
-        Nombre: nombre,
-        Apellido: apellido,
-        Fecha: fecha,
-    });
-
     fetch('https://jsonplaceholder.typicode.com/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dataToSend),
+        body: JSON.stringify({
+            nombre: nombre,
+            apellido: apellido,
+            fecha: fecha, // El servidor espera "fecha" en minúsculas
+        }),
     })
         .then((response) => response.json())
         .then((data) => {
